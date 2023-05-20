@@ -1,0 +1,13 @@
+name = "SharedMemoryLocks"
+uuid = "7bb51ff7-3c6a-41be-b642-de78e6952b49"
+authors = ["Andrey Zakharevich"]
+version = "1.0.0-DEV"
+
+[compat]
+julia = "1"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
