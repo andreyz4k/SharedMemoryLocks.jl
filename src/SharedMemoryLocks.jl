@@ -49,6 +49,6 @@ end
 using Serialization
 Serialization.serialize(s::AbstractSerializer, l::SharedMemoryLock) = Serialization.serialize_any(s, l)
 Serialization.deserialize(s::AbstractSerializer, t::Type{SharedMemoryLock}) =
-    @invoke Serialization.deserialize(s::AbstractSerializer, t::DataType)
+    invoke(Serialization.deserialize, Tuple{AbstractSerializer,DataType}, s, t)
 
 end
