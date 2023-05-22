@@ -23,7 +23,12 @@ function Base.lock(l::SharedMemoryLock)
 end
 
 function Base.trylock(l::SharedMemoryLock)
+    GC.disable_finalizers()
     res = atomic_pointerreplace(pointer(l.owned, 1), 0, myid(), :sequentially_consistent, :sequentially_consistent)
+    if !res.success
+        GC.enable_finalizers()
+        return false
+    end
     return res.success
 end
 
