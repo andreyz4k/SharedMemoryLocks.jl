@@ -1,7 +1,7 @@
 authors = ["Andrey Zakharevich"]
 name = "SharedMemoryLocks"
 uuid = "7bb51ff7-3c6a-41be-b642-de78e6952b49"
-version = "0.1.0"
+version = "0.1.1"
 
 [deps]
 Distributed = "8ba89e20-285c-5b6f-9357-94700520ee1b"
